@@ -1,0 +1,15 @@
+plugins {
+  id "us.ihmc.gradle.ihmc-build" version "0.0.16"
+}
+
+sourceCompatibility = 1.7
+version = '1.0.1'
+
+repositories {
+   mavenLocal()
+   mavenCentral()
+}
+
+dependencies {
+   compile 'junit:junit:4.12'
+}
