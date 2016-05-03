@@ -18,6 +18,15 @@ dependencies {
    compile 'junit:junit:4.12'
 }
 
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -25,6 +34,8 @@ publishing {
             groupId 'com.calvertsoftware'
             artifactId 'CalvertData'
             version project.version
+            
+            artifact sourcesJar
         }
     }
 }
